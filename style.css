@@ -91,8 +91,6 @@ body {
   0% { transform: translateY(0) scale(1); }
   100% { transform: translateY(50px) scale(1.1); }
 }
-
-/* Glass Utility Classes */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
@@ -101,7 +99,6 @@ body {
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
 }
 
-/* Navbar */
 .navbar {
   position: sticky;
   top: 0;
@@ -203,8 +200,6 @@ body {
   display: grid;
   place-items: center;
 }
-
-/* Main Content */
 .main-container {
   max-width: 1250px;
   margin: 2rem auto;
@@ -236,7 +231,6 @@ body {
   box-shadow: 0 4px 20px var(--accent-glow);
 }
 
-/* Products Grid */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -365,7 +359,6 @@ body {
   display: none !important;
 }
 
-/* Glass Drawer Modals */
 .drawer-overlay {
   position: fixed;
   inset: 0;
@@ -506,7 +499,6 @@ body {
   cursor: pointer;
 }
 
-/* Toast Notifications */
 .toast-container {
   position: fixed;
   bottom: 24px;
