@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MartX - Premium Glassmorphic Shopping Mart</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Glowing Blobs for Glassmorphism Effect -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <!-- Navbar -->
+  <header class="navbar glass">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fa-solid fa-bag-shopping"></i> Mart<span>X</span>
+      </div>
+      
+      <div class="search-bar glass-input">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search smartphones, smartwatches, audio..." />
+      </div>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn glass" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button id="wishlistBtn" class="icon-btn glass" aria-label="Open Wishlist">
+          <i class="fa-solid fa-heart"></i>
+          <span class="badge" id="wishlistBadge">0</span>
+        </button>
+        <button id="cartBtn" class="icon-btn glass" aria-label="Open Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <!-- Category Filter Buttons -->
+    <section class="filter-section">
+      <div class="categories" id="categoryFilters">
+        <button class="filter-btn glass active" data-category="all">All Items</button>
+        <button class="filter-btn glass" data-category="Electronics">Electronics</button>
+        <button class="filter-btn glass" data-category="Wearables">Wearables</button>
+        <button class="filter-btn glass" data-category="Audio">Audio</button>
+        <button class="filter-btn glass" data-category="Gaming">Gaming</button>
+        <button class="filter-btn glass" data-category="Accessories">Accessories</button>
+      </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="products-section">
+      <div class="products-grid" id="productsGrid">
+        <!-- Products injected via JS -->
+      </div>
+      <div id="noResults" class="no-results glass hidden">
+        <i class="fa-solid fa-box-open"></i>
+        <p>No products found matching your search.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <div class="drawer-overlay" id="cartDrawer">
+    <div class="drawer glass-drawer">
+      <div class="drawer-header">
+        <h3><i class="fa-solid fa-cart-shopping"></i> Your Cart</h3>
+        <button class="close-btn" id="closeCart">&times;</button>
+      </div>
+      <div class="drawer-body" id="cartItems">
+        <!-- Cart items injected via JS -->
+      </div>
+      <div class="drawer-footer">
+        <div class="subtotal">
+          <span>Total:</span>
+          <span id="cartTotal">₹0</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wishlist Drawer -->
+  <div class="drawer-overlay" id="wishlistDrawer">
+    <div class="drawer glass-drawer">
+      <div class="drawer-header">
+        <h3><i class="fa-solid fa-heart"></i> Your Wishlist</h3>
+        <button class="close-btn" id="closeWishlist">&times;</button>
+      </div>
+      <div class="drawer-body" id="wishlistItems">
+        <!-- Wishlist items injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
