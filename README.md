@@ -4,6 +4,10 @@ An interactive, responsive e-commerce web application with a glassmorphic design
 
 ---
 
+Deploment : https://akshithaanagireddy.github.io/Shopping_Mart/
+
+---
+
 ## 🚀 Features
 
 - **🛍️ Dynamic Product Catalog**: Dynamically rendered products across multiple categories (Audio, Wearables, Electronics, Gaming, Accessories).
@@ -36,6 +40,4 @@ martx-shopping-mart/
 
 - **HTML5**: Semantic structure and modern markup.
 - **CSS3**: Custom CSS Variables, Glassmorphism (`backdrop-filter`), Flexbox & CSS Grid, Keyframe animations.
-- **JavaScript (ES6+)**: Vanilla JS DOM manipulation, Array methods, LocalStorage API, and `Intl.NumberFormat` for Indian Rupee (`en-IN`) formatting.
-
----
+- **JavaScript (ES6+)**: Vanilla JS DOM manipulation, Array methods, LocalStorage API, and `Intl.NumberFormat` for Indian Rupee (`en-IN`) formatting
