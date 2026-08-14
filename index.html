@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MartX - Premium Glassmorphic Shopping Mart</title>
-  
-  <!-- Fonts & Icons -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,13 +12,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Ambient Glowing Blobs for Glassmorphism Effect -->
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
 
-  <!-- Navbar -->
   <header class="navbar glass">
     <div class="nav-container">
       <div class="logo">
@@ -46,10 +42,7 @@
       </div>
     </div>
   </header>
-
-  <!-- Main Container -->
   <main class="main-container">
-    <!-- Category Filter Buttons -->
     <section class="filter-section">
       <div class="categories" id="categoryFilters">
         <button class="filter-btn glass active" data-category="all">All Items</button>
@@ -60,11 +53,9 @@
         <button class="filter-btn glass" data-category="Accessories">Accessories</button>
       </div>
     </section>
-
-    <!-- Product Grid -->
     <section class="products-section">
       <div class="products-grid" id="productsGrid">
-        <!-- Products injected via JS -->
+
       </div>
       <div id="noResults" class="no-results glass hidden">
         <i class="fa-solid fa-box-open"></i>
@@ -73,7 +64,6 @@
     </section>
   </main>
 
-  <!-- Cart Drawer -->
   <div class="drawer-overlay" id="cartDrawer">
     <div class="drawer glass-drawer">
       <div class="drawer-header">
@@ -81,7 +71,6 @@
         <button class="close-btn" id="closeCart">&times;</button>
       </div>
       <div class="drawer-body" id="cartItems">
-        <!-- Cart items injected via JS -->
       </div>
       <div class="drawer-footer">
         <div class="subtotal">
@@ -92,8 +81,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Wishlist Drawer -->
   <div class="drawer-overlay" id="wishlistDrawer">
     <div class="drawer glass-drawer">
       <div class="drawer-header">
@@ -101,12 +88,9 @@
         <button class="close-btn" id="closeWishlist">&times;</button>
       </div>
       <div class="drawer-body" id="wishlistItems">
-        <!-- Wishlist items injected via JS -->
       </div>
     </div>
   </div>
-
-  <!-- Toast Notification Container -->
   <div class="toast-container" id="toastContainer"></div>
 
   <script src="script.js"></script>
