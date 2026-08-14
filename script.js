@@ -1,4 +1,3 @@
-// --- Extended Products Dataset in Indian Rupees (INR) ---
 const products = [
   {
     id: 1,
@@ -86,7 +85,6 @@ const products = [
   }
 ];
 
-// --- Currency Formatter Utility (Indian Numbering & Symbol) ---
 const formatINR = (amount) => {
   return new Intl.NumberFormat("en-IN", {
     style: "currency",
@@ -94,14 +92,10 @@ const formatINR = (amount) => {
     maximumFractionDigits: 0
   }).format(amount);
 };
-
-// --- Application State ---
 let cart = JSON.parse(localStorage.getItem("martx_cart")) || [];
 let wishlist = JSON.parse(localStorage.getItem("martx_wishlist")) || [];
 let currentCategory = "all";
 let searchQuery = "";
-
-// --- DOM References ---
 const productsGrid = document.getElementById("productsGrid");
 const noResults = document.getElementById("noResults");
 const searchInput = document.getElementById("searchInput");
@@ -122,7 +116,6 @@ const wishlistItems = document.getElementById("wishlistItems");
 const wishlistBadge = document.getElementById("wishlistBadge");
 const checkoutBtn = document.getElementById("checkoutBtn");
 
-// --- Initialization ---
 document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   renderProducts();
@@ -131,7 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupEventListeners();
 });
 
-// --- Theme Handler ---
 function initTheme() {
   const savedTheme = localStorage.getItem("martx_theme") || "dark";
   document.documentElement.setAttribute("data-theme", savedTheme);
@@ -143,8 +135,6 @@ function updateThemeIcon(theme) {
     ? '<i class="fa-solid fa-sun"></i>' 
     : '<i class="fa-solid fa-moon"></i>';
 }
-
-// --- Render Dynamic Product Cards ---
 function renderProducts() {
   const filtered = products.filter(item => {
     const matchesCategory = currentCategory === "all" || item.category === currentCategory;
@@ -184,7 +174,6 @@ function renderProducts() {
   }).join("");
 }
 
-// --- Cart Operations ---
 window.addToCart = function(id) {
   const product = products.find(p => p.id === id);
   const existing = cart.find(item => item.id === id);
@@ -245,8 +234,6 @@ function updateCartUI() {
   const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
   cartTotal.innerText = formatINR(total);
 }
-
-// --- Wishlist Operations ---
 window.toggleWishlist = function(id) {
   const index = wishlist.indexOf(id);
   const product = products.find(p => p.id === id);
@@ -287,7 +274,6 @@ function updateWishlistUI() {
   `).join("");
 }
 
-// --- Toast Notifications ---
 function showToast(message) {
   const container = document.getElementById("toastContainer");
   const toast = document.createElement("div");
@@ -301,15 +287,11 @@ function showToast(message) {
   }, 2500);
 }
 
-// --- Event Handlers ---
 function setupEventListeners() {
-  // Live Search
   searchInput.addEventListener("input", (e) => {
     searchQuery = e.target.value;
     renderProducts();
   });
-
-  // Category Tabs
   categoryButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       categoryButtons.forEach(b => b.classList.remove("active"));
@@ -327,8 +309,6 @@ function setupEventListeners() {
     localStorage.setItem("martx_theme", target);
     updateThemeIcon(target);
   });
-
-  // Drawer Toggles
   cartBtn.addEventListener("click", () => cartDrawer.classList.add("open"));
   closeCart.addEventListener("click", () => cartDrawer.classList.remove("open"));
 
@@ -341,7 +321,6 @@ function setupEventListeners() {
     });
   });
 
-  // Checkout Handler
   checkoutBtn.addEventListener("click", () => {
     if (cart.length === 0) {
       showToast("Your cart is empty!");
